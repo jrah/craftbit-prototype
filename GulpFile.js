@@ -52,8 +52,6 @@ gulp.task('sass-build', function() {
      gulp.src("src/scss/*.scss")
          .pipe(sass({
            includePaths: [
-            './bower_components/mathsass/dist/',
-            './bower_components/madsauce/',
             './bower_components/'
          ]
        }))
