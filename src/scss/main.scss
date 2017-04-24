@@ -1,11 +1,14 @@
-// project var
 
+// project var
+// These are standard defined variables used in craftmodule. We can overwrite them on a project by project basis.
 $primary: #84bd00;
 $anchor-bottom-hover: darken($primary, 5%);
 
+// This is the grid we can use. If you know of a better one we can use it.
 @import "susy/sass/susy";
-// modules
 
+// These are media queries used in craftbit to produce the Susy grid system
+// e.g. grid-1-1, grid-1-12, etc.
 $mqs: (
   sm: 35.5em,
   md: 48em,
@@ -13,26 +16,19 @@ $mqs: (
 );
 
 // craft modules
+// This is basic styles I have included. It is WIP.
 @import "craftmodule/index";
 
 // partials
+// This is where we store the components.
 @import "partial/index";
 
+
+// These are the breakpoints used by Tachyons
 $breakpoint-not-small: 'screen and (min-width: 35.5em)';
 $breakpoint-medium: 'screen and (min-width: 48em)';
 $breakpoint-large: 'screen and (min-width: 78em)';
 
 // tachyons
+// Tachyons go last to cascade over the top of the compiled CSS
 @import "tachyons-sass/tachyons";
-
-
-@mixin notice($border-color: $yellow, $background-color: $grey-lightest) {
-  border-left: 6px solid $border-color;
-  border-radius: 2px;
-  background-color: $background-color;
-  padding: .75rem;
-}
-
-.notice {
-  @include notice;
-}
