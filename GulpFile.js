@@ -28,7 +28,6 @@ gulp.task('sass', function() {
      gulp.src("src/scss/*.scss")
          .pipe(sass({
            includePaths: [
-            './bower_components/mathsass/dist/',
             './bower_components/tachyons-sass/',
             './bower_components/'
          ]
@@ -52,8 +51,9 @@ gulp.task('sass-build', function() {
      gulp.src("src/scss/*.scss")
          .pipe(sass({
            includePaths: [
-            './bower_components/'
-         ]
+             './bower_components/tachyons-sass/',
+             './bower_components/'
+            ]
        }))
         .pipe(sass({outputStyle: 'compressed'}))
         .pipe(gulp.dest("dist/css"))
